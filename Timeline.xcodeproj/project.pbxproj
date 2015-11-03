@@ -19,6 +19,9 @@
 		29A07C021BE9614700F7D51D /* AddPhotoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C011BE9614700F7D51D /* AddPhotoTableViewController.swift */; };
 		29A07C041BE9628200F7D51D /* LoginSignupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C031BE9628200F7D51D /* LoginSignupPickerViewController.swift */; };
 		29A07C061BE9630200F7D51D /* LoginSignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C051BE9630200F7D51D /* LoginSignupViewController.swift */; };
+		29A07C081BE9676500F7D51D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C071BE9676500F7D51D /* User.swift */; };
+		29A07C0A1BE9691500F7D51D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C091BE9691500F7D51D /* Post.swift */; };
+		29A07C0C1BE96A2C00F7D51D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C0B1BE96A2C00F7D51D /* Comment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		29A07C011BE9614700F7D51D /* AddPhotoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoTableViewController.swift; sourceTree = "<group>"; };
 		29A07C031BE9628200F7D51D /* LoginSignupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupPickerViewController.swift; sourceTree = "<group>"; };
 		29A07C051BE9630200F7D51D /* LoginSignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSignupViewController.swift; sourceTree = "<group>"; };
+		29A07C071BE9676500F7D51D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29A07C091BE9691500F7D51D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		29A07C0B1BE96A2C00F7D51D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,9 @@
 				29A07BE71BE9565900F7D51D /* AppDelegate.swift */,
 				29A07BE91BE9565900F7D51D /* ViewController.swift */,
 				29A07BEB1BE9565900F7D51D /* Main.storyboard */,
+				29A07C071BE9676500F7D51D /* User.swift */,
+				29A07C091BE9691500F7D51D /* Post.swift */,
+				29A07C0B1BE96A2C00F7D51D /* Comment.swift */,
 				29A07C051BE9630200F7D51D /* LoginSignupViewController.swift */,
 				29A07C031BE9628200F7D51D /* LoginSignupPickerViewController.swift */,
 				29A07C011BE9614700F7D51D /* AddPhotoTableViewController.swift */,
@@ -157,13 +166,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A07C001BE95FC800F7D51D /* ProfileViewController.swift in Sources */,
+				29A07C0A1BE9691500F7D51D /* Post.swift in Sources */,
 				29A07BFE1BE95EC700F7D51D /* UserSearchTableViewController.swift in Sources */,
 				29A07BEA1BE9565900F7D51D /* ViewController.swift in Sources */,
 				29A07BFA1BE95D1800F7D51D /* TimelineTableViewController.swift in Sources */,
 				29A07C061BE9630200F7D51D /* LoginSignupViewController.swift in Sources */,
 				29A07C041BE9628200F7D51D /* LoginSignupPickerViewController.swift in Sources */,
+				29A07C0C1BE96A2C00F7D51D /* Comment.swift in Sources */,
 				29A07BFC1BE95D7800F7D51D /* PostDetailTableViewController.swift in Sources */,
 				29A07BE81BE9565900F7D51D /* AppDelegate.swift in Sources */,
+				29A07C081BE9676500F7D51D /* User.swift in Sources */,
 				29A07C021BE9614700F7D51D /* AddPhotoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +324,7 @@
 				29A07BF81BE9565900F7D51D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
