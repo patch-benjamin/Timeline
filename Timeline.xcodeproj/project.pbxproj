@@ -25,6 +25,7 @@
 		29A07C0E1BE96CA100F7D51D /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C0D1BE96CA100F7D51D /* Like.swift */; };
 		29A07C101BE96E1B00F7D51D /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C0F1BE96E1B00F7D51D /* UserController.swift */; };
 		29A07C121BE9785000F7D51D /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C111BE9785000F7D51D /* PostController.swift */; };
+		29A07C141BE97C8E00F7D51D /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A07C131BE97C8E00F7D51D /* ImageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		29A07C0D1BE96CA100F7D51D /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		29A07C0F1BE96E1B00F7D51D /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		29A07C111BE9785000F7D51D /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		29A07C131BE97C8E00F7D51D /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				29A07C0D1BE96CA100F7D51D /* Like.swift */,
 				29A07C0F1BE96E1B00F7D51D /* UserController.swift */,
 				29A07C111BE9785000F7D51D /* PostController.swift */,
+				29A07C131BE97C8E00F7D51D /* ImageController.swift */,
 				29A07C0B1BE96A2C00F7D51D /* Comment.swift */,
 				29A07C051BE9630200F7D51D /* LoginSignupViewController.swift */,
 				29A07C031BE9628200F7D51D /* LoginSignupPickerViewController.swift */,
@@ -181,6 +184,7 @@
 				29A07C101BE96E1B00F7D51D /* UserController.swift in Sources */,
 				29A07C121BE9785000F7D51D /* PostController.swift in Sources */,
 				29A07C0E1BE96CA100F7D51D /* Like.swift in Sources */,
+				29A07C141BE97C8E00F7D51D /* ImageController.swift in Sources */,
 				29A07BFA1BE95D1800F7D51D /* TimelineTableViewController.swift in Sources */,
 				29A07C061BE9630200F7D51D /* LoginSignupViewController.swift in Sources */,
 				29A07C041BE9628200F7D51D /* LoginSignupPickerViewController.swift in Sources */,
