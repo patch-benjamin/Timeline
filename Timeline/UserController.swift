@@ -21,35 +21,35 @@ class UserController {
     }
 
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
-
+        completion(user: mockUsers().first)
     }
 
-    static func fetchAllUsers(completion: ([User]) -> Void) {
-
+    static func fetchAllUsers(completion: (users: [User]) -> Void) {
+        completion(users: mockUsers())
     }
 
-    static func userFollowsUser(userLhs: User, userRhs: User, completion: (success: Bool) -> Void) {
-
+    static func userFollowsUser(userLhs: User, userRhs: User, completion: (follows: Bool) -> Void) {
+        completion(follows: true)
     }
 
     static func followedByUser(user: User, completion: (users: [User]?) -> Void) {
-
+        completion(users: mockUsers())
     }
 
     static func authenticateUser(email: String, password: String, completion: (success: Bool, user: User?) -> Void) {
-
+        completion(success: true, user: mockUsers().first)
     }
 
     static func createUser(email: String, username: String, password: String, profileImage: String, bio: String? = nil, url: String? = nil, completion: (success: Bool, user: User?) -> Void) {
-
+        completion(success: true, user: mockUsers().last)
     }
 
     static func updateUser(user: User, bio: String? = nil, url: String? = nil, completion: (success: Bool, user: User?) -> Void) {
-
+        completion(success: true, user: mockUsers().first)
     }
 
     static func logOutCurrentUser() {
-
+        
     }
 
     static func mockUsers() -> [User] {
