@@ -97,7 +97,6 @@
                         <segue destination="1uy-ac-pDR" kind="relationship" relationship="viewControllers" id="Has-5f-wo9"/>
                         <segue destination="Pna-Iw-HUf" kind="relationship" relationship="viewControllers" id="kMW-eJ-n8C"/>
                         <segue destination="luR-Dp-nWB" kind="relationship" relationship="viewControllers" id="Wji-sm-cVR"/>
-                        <segue destination="aWP-cn-Xz2" kind="presentation" id="7TC-PL-Xsr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nam-6R-X04" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -140,6 +139,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="aWP-cn-Xz2" kind="presentation" identifier="toLoginSignupPickerSegue" id="0SH-cV-Iiq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dee-PO-6RO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,17 +208,17 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-5Z-4TC">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuA-0k-6Tu">
                                         <rect key="frame" x="0.0" y="46" width="560" height="36"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QuA-0k-6Tu">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqO-5Z-4TC">
                                         <rect key="frame" x="0.0" y="92" width="560" height="37"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fM1-mo-LE7">
                                         <rect key="frame" x="0.0" y="139" width="560" height="36"/>
@@ -234,6 +236,9 @@
                                         <rect key="frame" x="0.0" y="231" width="560" height="36"/>
                                         <animations/>
                                         <state key="normal" title="signUp/logIn"/>
+                                        <connections>
+                                            <action selector="actionButtonTapped:" destination="D0q-Rw-FDs" eventType="touchUpInside" id="Ya0-lh-TYb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -248,6 +253,15 @@
                             <constraint firstItem="CyI-6N-sex" firstAttribute="top" relation="lessThanOrEqual" secondItem="6FF-nF-1wc" secondAttribute="bottom" constant="225" id="xhQ-Ip-z8D"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="KAK-w4-xK3"/>
+                    <connections>
+                        <outlet property="actionButton" destination="P7q-Tk-JUW" id="ehI-9Q-93b"/>
+                        <outlet property="bioField" destination="fM1-mo-LE7" id="UxN-eH-tcG"/>
+                        <outlet property="emailField" destination="kqO-5Z-4TC" id="6yC-pI-J5B"/>
+                        <outlet property="passwordField" destination="QuA-0k-6Tu" id="8ZQ-DQ-3iE"/>
+                        <outlet property="uRLField" destination="2Ud-ge-eqz" id="Ee7-N7-C62"/>
+                        <outlet property="usernameField" destination="dDV-h6-ECW" id="tBm-0F-Qhb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q7g-ZS-Fny" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,7 +304,7 @@
                                                 <animations/>
                                                 <state key="normal" title="SIgnup"/>
                                                 <connections>
-                                                    <segue destination="D0q-Rw-FDs" kind="show" id="dRl-74-VHZ"/>
+                                                    <segue destination="D0q-Rw-FDs" kind="show" identifier="signupSegue" id="dRl-74-VHZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQr-dR-E0R">
@@ -298,7 +312,7 @@
                                                 <animations/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
-                                                    <segue destination="D0q-Rw-FDs" kind="show" id="Vwa-u7-O1S"/>
+                                                    <segue destination="D0q-Rw-FDs" kind="show" identifier="loginSegue" id="Vwa-u7-O1S"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -321,7 +335,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73f-KB-x8F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1246" y="655"/>
+            <point key="canvasLocation" x="-1272" y="767"/>
         </scene>
         <!--Add Photo Table View Controller-->
         <scene sceneID="sOs-gD-DMw">
@@ -459,7 +473,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Vwa-u7-O1S"/>
         <segue reference="smQ-f0-SmN"/>
-        <segue reference="dRl-74-VHZ"/>
     </inferredMetricsTieBreakers>
 </document>

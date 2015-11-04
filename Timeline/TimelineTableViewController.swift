@@ -20,11 +20,19 @@ class TimelineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    override func viewDidAppear(animated: Bool) {
+        
+        if let currentUser = UserController.sharedInstance.currentUser{
+            // load timeline for current user
+            // set property of an array of posts
+        } else {
+            // perform the model segue from tabbar controller to login/signup picker
+            performSegueWithIdentifier("toLoginSignupPickerSegue", sender: self)
+            
+        }
 
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

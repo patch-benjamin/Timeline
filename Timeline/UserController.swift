@@ -17,7 +17,8 @@ class UserController {
     var currentUser: User!
 
     init() {
-        currentUser = UserController.mockUsers().first
+//        currentUser = UserController.mockUsers().first
+        currentUser = nil
     }
 
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {
@@ -40,7 +41,7 @@ class UserController {
         completion(success: true, user: mockUsers().first)
     }
 
-    static func createUser(email: String, username: String, password: String, profileImage: String, bio: String? = nil, url: String? = nil, completion: (success: Bool, user: User?) -> Void) {
+    static func createUser(email: String, username: String, password: String, bio: String? = nil, url: String? = nil, completion: (success: Bool, user: User?) -> Void) {
         completion(success: true, user: mockUsers().last)
     }
 
