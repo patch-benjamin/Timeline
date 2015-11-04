@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "716E63251BE9566700EA1A00"
-               BuildableName = "TimeLine.app"
-               BlueprintName = "TimeLine"
+               BlueprintIdentifier = "29A07BE31BE9565900F7D51D"
+               BuildableName = "Timeline.app"
+               BlueprintName = "Timeline"
                ReferencedContainer = "container:TimeLine.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "716E63251BE9566700EA1A00"
-            BuildableName = "TimeLine.app"
-            BlueprintName = "TimeLine"
+            BlueprintIdentifier = "29A07BE31BE9565900F7D51D"
+            BuildableName = "Timeline.app"
+            BlueprintName = "Timeline"
             ReferencedContainer = "container:TimeLine.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "716E63251BE9566700EA1A00"
-            BuildableName = "TimeLine.app"
-            BlueprintName = "TimeLine"
+            BlueprintIdentifier = "29A07BE31BE9565900F7D51D"
+            BuildableName = "Timeline.app"
+            BlueprintName = "Timeline"
             ReferencedContainer = "container:TimeLine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "716E63251BE9566700EA1A00"
-            BuildableName = "TimeLine.app"
-            BlueprintName = "TimeLine"
+            BlueprintIdentifier = "29A07BE31BE9565900F7D51D"
+            BuildableName = "Timeline.app"
+            BlueprintName = "Timeline"
             ReferencedContainer = "container:TimeLine.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
