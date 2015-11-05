@@ -17,8 +17,8 @@ class UserController {
     var currentUser: User!
 
     init() {
-//        currentUser = UserController.mockUsers().first
-        currentUser = nil
+        currentUser = UserController.mockUsers().first
+//        currentUser = nil
     }
 
     static func userForIdentifier(identifier: String, completion: (user: User?) -> Void) {

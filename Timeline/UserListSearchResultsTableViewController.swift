@@ -57,8 +57,7 @@ class UserListSearchResultsTableViewController: UITableViewController {
 
         let sender = tableView.cellForRowAtIndexPath(indexPath)
 
-        self.presentationController?.performSegueWithIdentifier("toProfileView", sender: sender)
-
+        self.presentingViewController?.performSegueWithIdentifier("toProfileView", sender: sender)
     }
 
 
