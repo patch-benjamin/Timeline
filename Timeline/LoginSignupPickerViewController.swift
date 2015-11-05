@@ -29,12 +29,12 @@ class LoginSignupPickerViewController: UIViewController {
         if segue.identifier == "signupSegue" {
             if let signUpViewController = segue.destinationViewController as? LoginSignupViewController {
                 signUpViewController.loadView()
-                signUpViewController.updateViewForMode(ViewMode.Signup)
+                signUpViewController.updateViewForMode(.Signup)
             }
         } else if segue.identifier == "loginSegue" {
             if let signUpViewController = segue.destinationViewController as? LoginSignupViewController {
                 signUpViewController.loadView()
-                signUpViewController.updateViewForMode(ViewMode.Login)
+                signUpViewController.updateViewForMode(.Login)
             }
 
         }

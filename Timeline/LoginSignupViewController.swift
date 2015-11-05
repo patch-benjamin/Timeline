@@ -8,12 +8,12 @@
 
 import UIKit
 
-enum ViewMode {
-    case Login, Signup
-}
-
 
 class LoginSignupViewController: UIViewController {
+    
+    enum ViewMode {
+        case Login, Signup
+    }
 
     // MARK: - Properties
     

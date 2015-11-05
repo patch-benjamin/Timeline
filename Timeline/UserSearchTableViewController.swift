@@ -8,8 +8,55 @@
 
 import UIKit
 
+
 class UserSearchTableViewController: UITableViewController {
 
+    // MARK: Enums
+    enum ViewMode: Int {
+        case Friends = 0
+        case All = 1
+        
+        func users(completion: (users: [User]?) -> Void) {
+            if self == .Friends {
+                UserController.followedByUser(UserController.sharedInstance.currentUser, completion: completion)
+            } else {
+                UserController.fetchAllUsers(completion)
+            }
+        }
+    }
+
+    // MARK: Properties
+    let usersDataSource: [User] = []
+    
+    var mode: ViewMode {
+        return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
+    }
+
+    
+    // MARK: Outlets
+    @IBOutlet weak var modeSegmentedControl: UISegmentedControl!
+    
+    // MARK: Actions
+    @IBAction func selectedIndexChanged(sender: UISegmentedControl) {
+        updateViewBasedOnMode()
+    }
+    
+    
+    func updateViewBasedOnMode() {
+        mode.users { (users) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if users = users {
+                    usersDataSource = users
+                } else {
+                    // do something/error handle?
+                    print("There are no users for the current user mode (AKA \(mode))")
+                }
+                self.tableView.reloadData()
+            })
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +65,7 @@ class UserSearchTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        updateViewBasedOnMode()
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,19 +81,19 @@ class UserSearchTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return usersDataSource.count
     }
 
-    /*
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        cell.textLabel?.text = usersDataSource[indexPath.row].username
+        
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

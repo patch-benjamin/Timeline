@@ -45,8 +45,14 @@
                                 <segment title="Friends"/>
                                 <segment title="Add Friends"/>
                             </segments>
+                            <connections>
+                                <action selector="selectedIndexChanged:" destination="Gu0-F3-tEh" eventType="valueChanged" id="AGY-sb-qJg"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeSegmentedControl" destination="mCL-gq-tRW" id="T3o-nT-Zyf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXm-tC-iuM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
