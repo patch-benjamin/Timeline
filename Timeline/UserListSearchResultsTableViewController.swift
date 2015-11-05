@@ -51,6 +51,16 @@ class UserListSearchResultsTableViewController: UITableViewController {
         return cell
     }
 
+    //MARK: Table View Delegates
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let sender = tableView.cellForRowAtIndexPath(indexPath)
+
+        self.presentationController?.performSegueWithIdentifier("toProfileView", sender: sender)
+
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -96,5 +106,4 @@ class UserListSearchResultsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -50,6 +50,7 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
                 if let users = users {
                     self.usersDataSource = users
                 } else {
+                    self.usersDataSource = []
                     // do something/error handle?
                     print("There are no users for the current user mode")
                 }
@@ -69,17 +70,21 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
 
         tableView.tableHeaderView = searchController.searchBar
 
+        definesPresentationContext = true
+
     }
     //MARK: Controlling the Search
+
+
     func updateSearchResultsForSearchController(searchController: UISearchController) {
 
-        let searchTerm = searchController.searchBar.text!
+        let searchTerm = searchController.searchBar.text!.lowercaseString
         let resultsViewController = searchController.searchResultsController as! UserListSearchResultsTableViewController
 
         resultsViewController.userDataSource = self.usersDataSource.filter({$0.username.lowercaseString.containsString(searchTerm)})
         resultsViewController.tableView.reloadData()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,6 +94,7 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         updateViewBasedOnMode()
+
         setUpSearchController()
     }
 
@@ -165,7 +171,7 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
         var selectedUser: User
 
         if let indexPath = (searchController.searchResultsController as? UserListSearchResultsTableViewController)?.tableView.indexPathForCell(sender) {
-            let usersDataSource = (searchController.searchResultsController as! UserListSearchResultsTableViewController).userDataSource
+            //let usersDataSource = (searchController.searchResultsController as! UserListSearchResultsTableViewController).userDataSource
             selectedUser = self.usersDataSource[indexPath.row]
 
         } else {
@@ -175,6 +181,7 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
 
         }
         let destinationViewController = segue.destinationViewController as! ProfileViewController
+
         destinationViewController.user = selectedUser
     }
 
