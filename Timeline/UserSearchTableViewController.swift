@@ -9,7 +9,7 @@
 import UIKit
 
 
-class UserSearchTableViewController: UITableViewController {
+class UserSearchTableViewController: UITableViewController, UISearchResultsUpdating {
 
     // MARK: Enums
     enum ViewMode: Int {
@@ -26,8 +26,10 @@ class UserSearchTableViewController: UITableViewController {
     }
 
     // MARK: Properties
-    let usersDataSource: [User] = []
-    
+    var usersDataSource: [User] = []
+
+    var searchController: UISearchController!
+
     var mode: ViewMode {
         return ViewMode(rawValue: modeSegmentedControl.selectedSegmentIndex)!
     }
@@ -45,17 +47,38 @@ class UserSearchTableViewController: UITableViewController {
     func updateViewBasedOnMode() {
         mode.users { (users) -> Void in
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                if users = users {
-                    usersDataSource = users
+                if let users = users {
+                    self.usersDataSource = users
                 } else {
                     // do something/error handle?
-                    print("There are no users for the current user mode (AKA \(mode))")
+                    print("There are no users for the current user mode")
                 }
                 self.tableView.reloadData()
             })
         }
     }
+    //MARK: Building a Search Bar
+    func setUpSearchController() {
 
+        let resultsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("userSearchResults")
+
+        searchController = UISearchController(searchResultsController: resultsController)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+
+        tableView.tableHeaderView = searchController.searchBar
+
+    }
+    //MARK: Controlling the Search
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+
+        let searchTerm = searchController.searchBar.text!
+        let resultsViewController = searchController.searchResultsController as! UserListSearchResultsTableViewController
+
+        resultsViewController.userDataSource = self.usersDataSource.filter({$0.username.lowercaseString.containsString(searchTerm)})
+        resultsViewController.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +89,7 @@ class UserSearchTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         updateViewBasedOnMode()
+        setUpSearchController()
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,14 +154,29 @@ class UserSearchTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        let sender = sender as! UITableViewCell
+
+        var selectedUser: User
+
+        if let indexPath = (searchController.searchResultsController as? UserListSearchResultsTableViewController)?.tableView.indexPathForCell(sender) {
+            let usersDataSource = (searchController.searchResultsController as! UserListSearchResultsTableViewController).userDataSource
+            selectedUser = self.usersDataSource[indexPath.row]
+
+        } else {
+
+            let indexPath = tableView.indexPathForCell(sender)!
+            selectedUser = self.usersDataSource[indexPath.row]
+
+        }
+        let destinationViewController = segue.destinationViewController as! ProfileViewController
+        destinationViewController.user = selectedUser
     }
-    */
+
 
 }

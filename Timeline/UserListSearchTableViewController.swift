@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserListSearchResultsTableViewController: UITableViewController {
+class UserListSearchTableViewController: UITableViewController {
 
     var usersDataSource: [User] = []
 

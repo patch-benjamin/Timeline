@@ -10,8 +10,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    var user: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        print(user)
 
         // Do any additional setup after loading the view.
     }
